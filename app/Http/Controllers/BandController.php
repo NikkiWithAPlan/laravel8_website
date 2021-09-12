@@ -56,6 +56,19 @@ class BandController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $bandMember = Band::find($id);
+
+        return view('backend.bandMembers.show')->with('bandMember', $bandMember);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
