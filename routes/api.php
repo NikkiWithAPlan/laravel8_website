@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BandController;
+use App\Http\Controllers\BackendControllers\BandController;
+use App\Http\Controllers\BackendControllers\BandDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,9 @@ use App\Http\Controllers\BandController;
 
 // Band Backend
 Route::resource('band', BandController::class);
+
+// Band Details Backend
+Route::resource('band_details', BandDetailsController::class);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

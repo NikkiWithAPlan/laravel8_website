@@ -7,10 +7,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'DC79') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
+    <!-- Editor -->
+    <script src="https://cdn.tiny.cloud/1/4lcof6sd3si5by5c5lo61tazlmzg5gvv0tm2ted9qw7yyxr2/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -77,6 +80,7 @@
 
         <main class="py-4">
             @yield('content')
+            @yield('tinyEditor')
         </main>
     </div>
 </body>
