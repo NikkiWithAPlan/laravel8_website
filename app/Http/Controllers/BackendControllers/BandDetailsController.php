@@ -63,7 +63,9 @@ class BandDetailsController extends Controller
      */
     public function show($id)
     {
-        //
+        $bandText = BandDetail::find($id);
+
+        return view('backend.bandDetails.index')->with('bandText', $bandText);
     }
 
     /**
@@ -74,7 +76,9 @@ class BandDetailsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $bandText = BandDetail::find($id);
+
+        return view('backend.bandDetails.edit')->with('bandText', $bandText);
     }
 
     /**
@@ -86,7 +90,16 @@ class BandDetailsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $editor_data = $request->text;
+
+        // update text content
+        $bandText = BandDetail::find($id);
+
+        $bandText->text = $editor_data;
+
+        $bandText->save();
+
+        return view('backend.bandDetails.index')->with('bandText', $bandText);
     }
 
     /**
@@ -97,6 +110,10 @@ class BandDetailsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bandText = BandDetail::find($id);
+
+        $bandText->delete();
+
+        return BandDetail::all();
     }
 }

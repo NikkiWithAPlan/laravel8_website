@@ -2,14 +2,14 @@
 
 @section('content')
 
+    <h3>Edit {{ $bandText->id }}</h3>
+
     <div class="row">
         <div class="col-sm-10">
             <div class="card">
                 <div class="card-body">
-
-                    <p>Create Band text</p>
-
-                    <form method="post" action="{{ route('band_details.store') }}">
+                    <form method="POST" action="{{ route('band_details.update', $bandText->id) }}">
+                        @method('PUT')
                         @csrf
 
                         <textarea id="text" name="text">
@@ -18,7 +18,6 @@
                         <br>
                         <input class="btn btn-primary" type="submit" name="submit" value="SUBMIT">
                     </form>
-
                 </div>
             </div>
         </div>
