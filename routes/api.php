@@ -2,8 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BackendControllers\BandController;
-use App\Http\Controllers\BackendControllers\BandDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +13,6 @@ use App\Http\Controllers\BackendControllers\BandDetailsController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-// Band Backend
-Route::resource('band', BandController::class);
-
-// Band Details Backend
-Route::resource('band_details', BandDetailsController::class);
-
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

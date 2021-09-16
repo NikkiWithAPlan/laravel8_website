@@ -10,6 +10,9 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\BackendControllers\BandController;
+use App\Http\Controllers\BackendControllers\BandDetailsController;
+
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
                 ->name('register');
@@ -62,3 +65,13 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+
+
+// Band Backend
+Route::resource('band', BandController::class)
+                ->middleware('auth');
+
+
+// Band Details Backend
+Route::resource('band_details', BandDetailsController::class)
+                ->middleware('auth');
