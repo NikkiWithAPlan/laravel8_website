@@ -14,11 +14,11 @@ use App\Http\Controllers\BackendControllers\BandController;
 use App\Http\Controllers\BackendControllers\BandDetailsController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
-                ->middleware('guest')
+                ->middleware('auth')
                 ->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
-                ->middleware('guest');
+                ->middleware('auth');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
                 ->middleware('guest')
