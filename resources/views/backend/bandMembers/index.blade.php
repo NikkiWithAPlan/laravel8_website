@@ -25,7 +25,7 @@
                                     <td>{{ $bandMember->instrument }}</td>
                                     <td><a href="{{ route('band.edit',$bandMember->id) }}" class="btn btn-primary">Edit</a></td>
                                 </tr>
-                              @endforeach
+                            @endforeach
                             </tbody>
                         </table>
 

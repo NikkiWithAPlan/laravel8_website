@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h3>Edit {{ $bandText->id }}</h3>
+    <h3>Edit Band text</h3>
 
     <div class="row">
         <div class="col-sm-10">

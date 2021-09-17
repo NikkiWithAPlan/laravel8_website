@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\BackendControllers;
 
-use App\Models\BandDetail;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class BandDetailsController extends Controller
+class ContactsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,9 +26,9 @@ class BandDetailsController extends Controller
      */
     public function index()
     {
-        $bandText = BandDetail::latest()->first();
+        $contact = Contact::latest()->first();
 
-        return view('backend.bandDetails.index')->with('bandText', $bandText);
+        return view('backend.contacts.index')->with('contact', $contact);
     }
 
     /**
@@ -38,9 +38,7 @@ class BandDetailsController extends Controller
      */
     public function create()
     {
-        $bandText = BandDetail::latest()->first();
-
-        return view('backend.bandDetails.create')->with('bandText', $bandText);
+        return view('backend.contacts.create');
     }
 
     /**
@@ -51,19 +49,22 @@ class BandDetailsController extends Controller
      */
     public function store(Request $request)
     {
-        $editor_data = $request->text;
-        // $this->validate($request, [
-		// 	'text' => 'required|string'
-        // ]);
+        $this->validate($request, [
+			'title' => 'string',
+			'mobile' => 'string',
+			'email' => 'string',
+        ]);
 
-        // create new text content
-        $bandText = new BandDetail;
+        // create new bandMember
+        $contact = new Contact;
 
-        $bandText->text = $editor_data;
+        $contact->title = $request->input('title');
+        $contact->mobile = $request->input('mobile');
+        $contact->email = $request->input('email');
 
-        $bandText->save();
+        $contact->save();
 
-        return redirect()->route('band_details.index');
+        return redirect()->route('contacts.index');
     }
 
     /**
@@ -74,9 +75,9 @@ class BandDetailsController extends Controller
      */
     public function show($id)
     {
-        $bandText = BandDetail::find($id);
+        $contact = Contact::find($id);
 
-        return view('backend.bandDetails.index')->with('bandText', $bandText);
+        return view('backend.contacts.show')->with('contact', $contact);
     }
 
     /**
@@ -87,9 +88,9 @@ class BandDetailsController extends Controller
      */
     public function edit($id)
     {
-        $bandText = BandDetail::find($id);
+        $contact = Contact::find($id);
 
-        return view('backend.bandDetails.edit')->with('bandText', $bandText);
+        return view('backend.contacts.edit')->with('contact', $contact);
     }
 
     /**
@@ -101,16 +102,21 @@ class BandDetailsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $editor_data = $request->text;
+        $this->validate($request, [
+			'title' => 'string',
+			'mobile' => 'string',
+			'email' => 'string',
+        ]);
 
-        // update text content
-        $bandText = BandDetail::find($id);
+        $contact = Contact::find($id);
 
-        $bandText->text = $editor_data;
+        $contact->title = $request->input('title');
+        $contact->mobile = $request->input('mobile');
+        $contact->email = $request->input('email');
 
-        $bandText->save();
+        $contact->save();
 
-        return view('backend.bandDetails.index')->with('bandText', $bandText);
+        return view('backend.contacts.show')->with('contact', $contact);
     }
 
     /**
@@ -121,10 +127,10 @@ class BandDetailsController extends Controller
      */
     public function destroy($id)
     {
-        $bandText = BandDetail::find($id);
+        $contact = Contact::find($id);
 
-        $bandText->delete();
+        $contact->delete();
 
-        return BandDetail::all();
+        return redirect()->route('backend.contacts.index')->with('success', 'Contact has been deleted');
     }
 }

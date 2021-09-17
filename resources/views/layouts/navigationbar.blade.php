@@ -27,6 +27,9 @@
                 <li><a class="nav-link" href="{{ route('shows.index') }}">
                     {{ __('Shows') }}
                 </a></li>
+                <li><a class="nav-link" href="{{ route('contacts.index') }}">
+                    {{ __('Contacts') }}
+                </a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

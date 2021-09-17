@@ -12,8 +12,8 @@
                     @method('PUT')
                     @csrf
 
-                    <label for="Member_Name">Member Name</label>
-                    <input type="text" id="member_name" name="member_name">
+                    <label for="Member_Name" class="form-label">Member Name</label>
+                    <input type="text" id="member_name" name="member_name" class="form-control" value="{{ $bandMember->member_name }}">
                     <br>
 		            <input class="btn btn-primary" type="submit" name="submit" value="Update">
 

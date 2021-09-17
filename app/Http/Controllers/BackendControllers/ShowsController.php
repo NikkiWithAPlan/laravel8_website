@@ -159,6 +159,6 @@ class ShowsController extends Controller
 
         $show->delete();
 
-        return redirect()->route('shows.index')->with('success', 'Show has been deleted');
+        return redirect()->route('backend.shows.index')->with('success', 'Show has been deleted');
     }
 }
