@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BackendControllers\BandController;
 use App\Http\Controllers\BackendControllers\BandDetailsController;
+use App\Http\Controllers\BackendControllers\ShowsController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('auth')
@@ -71,7 +72,10 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 Route::resource('band', BandController::class)
                 ->middleware('auth');
 
-
 // Band Details Backend
 Route::resource('band_details', BandDetailsController::class)
+                ->middleware('auth');
+
+// Shows Backend
+Route::resource('shows', ShowsController::class)
                 ->middleware('auth');
