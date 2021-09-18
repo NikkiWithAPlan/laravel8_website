@@ -14,6 +14,8 @@ use App\Http\Controllers\BackendControllers\BandController;
 use App\Http\Controllers\BackendControllers\BandDetailsController;
 use App\Http\Controllers\BackendControllers\ShowsController;
 use App\Http\Controllers\BackendControllers\ContactsController;
+use App\Http\Controllers\BackendControllers\AlbumsController;
+use App\Http\Controllers\BackendControllers\PhotosController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('auth')
@@ -81,6 +83,14 @@ Route::resource('band_details', BandDetailsController::class)
 Route::resource('shows', ShowsController::class)
                 ->middleware('auth');
 
-// Shows Backend
+// Contacts Backend
 Route::resource('contacts', ContactsController::class)
+                ->middleware('auth');
+
+// Albums Backend
+Route::resource('albums', AlbumsController::class)
+                ->middleware('auth');
+
+// Photos Backend
+Route::resource('photos', PhotosController::class)
                 ->middleware('auth');
