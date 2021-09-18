@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\BackendControllers;
 
-use App\Models\Band;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Models\Video;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class BandController extends Controller
+class VideosController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,9 +25,9 @@ class BandController extends Controller
      */
     public function index()
     {
-        $bandMembers = Band::all();
-        
-        return view('backend.bandMembers.index')->with('bandMembers', $bandMembers);
+        $videos = Video::orderByDesc('created_at')->get();
+
+        return view('backend.videos.index')->with('videos', $videos);
     }
 
     /**
@@ -38,7 +37,7 @@ class BandController extends Controller
      */
     public function create()
     {
-        return view('backend.bandMembers.create');
+        return view('backend.videos.create');
     }
 
     /**
@@ -49,20 +48,15 @@ class BandController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-			'member_name' => 'required|string',
-			'instrument' => 'required|string',
-        ]);
+        // create new Video
+        $video = new Video;
 
-        // create new bandMember
-        $bandMember = new Band;
+        $video->title = $request->input('title');
+        $video->url = $request->input('url');
 
-        $bandMember->member_name = $request->input('member_name');
-        $bandMember->instrument = $request->input('instrument');
+        $video->save();
 
-        $bandMember->save();
-
-        return redirect()->route('band.index');
+        return redirect()->route('videos.index');
     }
 
     /**
@@ -73,9 +67,9 @@ class BandController extends Controller
      */
     public function show($id)
     {
-        $bandMember = Band::find($id);
+        $video = Video::find($id);
 
-        return view('backend.bandMembers.show')->with('bandMember', $bandMember);
+        return view('backend.videos.show')->with('video', $video);
     }
 
     /**
@@ -86,9 +80,9 @@ class BandController extends Controller
      */
     public function edit($id)
     {
-        $bandMember = Band::find($id);
+        $video = Video::find($id);
 
-        return view('backend.bandMembers.edit')->with('bandMember', $bandMember);
+        return view('backend.videos.edit')->with('video', $video);
     }
 
     /**
@@ -100,17 +94,14 @@ class BandController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-			'member_name' => 'required|string',
-        ]);
+        $video = Video::find($id);
 
-        $bandMember = Band::find($id);
+        $video->title = $request->input('title');
+        $video->url = $request->input('url');
 
-        $bandMember->member_name = $request->input('member_name');
+        $video->save();
 
-        $bandMember->save();
-
-        return redirect()->route('band.index');
+        return redirect()->route('videos.index');
     }
 
     /**
@@ -121,10 +112,10 @@ class BandController extends Controller
      */
     public function destroy($id)
     {
-        $bandMember = Band::find($id);
+        $video = Video::find($id);
 
-        $bandMember->delete();
+        $video->delete();
 
-        return Band::all();
+        return redirect()->route('videos.index');
     }
 }

@@ -30,6 +30,9 @@
                 <li><a class="nav-link" href="{{ route('shows.index') }}">
                     {{ __('Shows') }}
                 </a></li>
+                <li><a class="nav-link" href="{{ route('videos.index') }}">
+                    {{ __('Videos') }}
+                </a></li>
                 <li><a class="nav-link" href="{{ route('contacts.index') }}">
                     {{ __('Contacts') }}
                 </a></li>

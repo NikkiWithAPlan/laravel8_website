@@ -16,6 +16,7 @@ use App\Http\Controllers\BackendControllers\ShowsController;
 use App\Http\Controllers\BackendControllers\ContactsController;
 use App\Http\Controllers\BackendControllers\AlbumsController;
 use App\Http\Controllers\BackendControllers\PhotosController;
+use App\Http\Controllers\BackendControllers\VideosController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('auth')
@@ -95,4 +96,8 @@ Route::resource('albums', AlbumsController::class)
 Route::get('/photos/create/{id}', [PhotosController::class, 'create'])->name('photos.create');
 Route::resource('photos', PhotosController::class)
                 ->except('create')
+                ->middleware('auth');
+
+// Videos Backend
+Route::resource('videos', VideosController::class)
                 ->middleware('auth');
