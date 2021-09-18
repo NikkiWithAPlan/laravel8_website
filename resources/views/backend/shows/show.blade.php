@@ -58,7 +58,7 @@
                         @csrf
 
                         <button type="submit" class="btn btn-danger btn-icon">
-                          Delete
+                          Delete - {{ $show->date }}
                         </button>
                     </form>
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\BackendControllers;
 
 use App\Models\Album;
+use App\Models\Photo;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -97,13 +98,24 @@ class AlbumsController extends Controller
     public function destroy($id)
     {
         $album = Album::find($id);
+        $photos = Photo::where('album_id', $album->id)->get();
 
 		if (Storage::path($album->cover_image)) {
-            $directory = 'public/album_covers/'.$album->id;
-            $files = Storage::allFiles($directory);
-            Storage::delete($files);
-			Storage::deleteDirectory($directory);
-			$album->delete();
+            // delete album from storage
+            $albumCoverDirectory = 'public/album_covers/'.$album->id;
+            Storage::delete(Storage::allFiles($albumCoverDirectory));
+			Storage::deleteDirectory($albumCoverDirectory);
+
+            // delete photos from storage
+            $photoDirectory = 'public/photos/'.$album->id;
+            Storage::delete(Storage::allFiles($photoDirectory));
+			Storage::deleteDirectory($photoDirectory);
+			
+            // delete album from DB
+            $album->delete();
+
+            // delete photos from DB
+            Photo::where('album_id', $album->id)->delete();
 
 			return redirect()->route('albums.index')->with('success', 'Album has been deleted');
 		}

@@ -92,5 +92,7 @@ Route::resource('albums', AlbumsController::class)
                 ->middleware('auth');
 
 // Photos Backend
+Route::get('/photos/create/{id}', [PhotosController::class, 'create'])->name('photos.create');
 Route::resource('photos', PhotosController::class)
+                ->except('create')
                 ->middleware('auth');

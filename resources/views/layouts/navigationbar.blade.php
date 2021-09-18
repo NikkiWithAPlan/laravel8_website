@@ -25,10 +25,7 @@
                     </ul>
                 </li>
                 <li><a class="nav-link" href="{{ route('albums.index') }}">
-                    {{ __('Albums') }}
-                </a></li>
-                <li><a class="nav-link" href="{{ route('photos.index') }}">
-                    {{ __('Photos') }}
+                    {{ __('Albums and photos') }}
                 </a></li>
                 <li><a class="nav-link" href="{{ route('shows.index') }}">
                     {{ __('Shows') }}

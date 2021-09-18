@@ -1,61 +1,52 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card-body">
+    <h2>Albums</h2>
+    <div class="card">
+        <div class="card-body">
+            <a class="btn btn-primary" role="button" href="{{ route('albums.create') }}">
+                Add new album
+            </a>
+        </div>
 
-        <a class="btn btn-primary" role="button" href="{{ route('albums.create') }}">
-            Add new album
-        </a>
-    </div>
-
-	<div class="card-body">
-
-    @if (count($albums) > 0)
-        <?php
-        $colcount = count($albums);
-        $i = 1;
-        ?>
-        <div id="albums">
-            <div class="row text-center">
-                @foreach ($albums as $album)
-                    @if ($i == $colcount)
-                        <div class="medium-4 columns end">
-                            <a href="/albums/{{ $album->id }}">
-                                <img class="thumbnail"
-                                    src="/storage/album_covers/{{ $album->id }}/{{ $album->cover_image }}"
-                                    alt="{{ $album->name }}" style="width:30%;">
-                            </a>
-                            <br />
-                            <h4>{{ $album->name }}</h4>
-                        @else
-                            <div class="medium-4 columns">
-                                <a href="/albums/{{ $album->id }}">
-                                    <img class="thumbnail"
+        <div class="card-body">
+            <div class="container">
+                <div class="row justify-content-start">
+                    @forelse ($albums as $album)
+                        <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                                <a href="{{ route('albums.show', $album->id) }}">
+                                    <img class="card-img-top"
                                         src="/storage/album_covers/{{ $album->id }}/{{ $album->cover_image }}"
-                                        alt="{{ $album->name }}" style="width:30%;">
+                                        alt="{{ $album->name }}">
                                 </a>
-                                <br />
-                                <h4>{{ $album->name }}</h4>
-                    @endif
-                    @if ($i % 3 == 0)
-					</div>
-				</div>
-				<div class="row text-center">
-					@else
-				</div>
-    				@endif
-    	<?php $i++; ?>
-    			@endforeach
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $album->name }}</h5>
+                                    <div class="btn-group" role="group">
+                                        <a href="{{ route('photos.create', $album->id) }}" type="button"
+                                            class="btn btn-outline-primary">
+                                            Add new photo
+                                        </a>
+                                        <a href="{{ route('albums.show', $album->id) }}" type="button"
+                                            class="btn btn-outline-primary">
+                                            Edit album
+                                        </a>
+                                        <form method="post" action="{{ route('albums.destroy', $album->id) }}">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-outline-danger">
+                                                Delete - {{ $album->name }}
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <p>No albums to display</p>
+                    @endforelse
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-@else
-    <p>No albums to display</p>
-    @endif
-
-	</div>
-
-    {{-- <h3>Albums</h3>
-	@foreach ($albums as $album)
-		$album->name
-	@endforeach --}}
 @endsection

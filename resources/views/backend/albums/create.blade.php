@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<h3>create album</h3>
+	<h3>Create Album</h3>
 
 	<div class="row">
 		<div class="col-sm-6">
