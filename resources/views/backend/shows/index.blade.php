@@ -11,38 +11,25 @@
             </a>
         </div>
         <div class="card-body">
-
-            @if (count($shows) > 0)
-                <?php
-                $colcount = count($shows);
-                $i = 1;
-                ?>
-                <div id="shows">
-                    <div class="row text-center">
-                        @foreach ($shows as $show)
-                            <div class="card mb-3">
+            <div class="container">
+                <div class="row justify-content-start">
+                    @forelse ($shows as $show)
+                        <div class="col-4">
+                            <div class="card" style="width: 18rem; margin:1rem; padding:0.5rem;">
                                 <div class="card-title">
                                     <a href="{{ route('shows.show', $show->id) }}">
                                         {{ $show->date }}
                                     </a>
                                     <br>
                                     <h4>{{ $show->place_name }}</h4>
-                                    @if ($i % 3 == 0)
                                 </div>
                             </div>
-                    </div>
-                    <div class="row text-center">
-                                    @else
-                    </div>
+                        </div>
+                    @empty
+                        <p>No shows to display</p>
+                    @endforelse
                 </div>
-                                    @endif
-                <?php $i++; ?>
-                        @endforeach
-        </div>
-    </div>
-            @else
-                <p>No shows to display</p>
-            @endif
+            </div>
         </div>
     </div>
 

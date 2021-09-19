@@ -90,16 +90,17 @@ class PhotosController extends Controller
     public function destroy($id)
     {
         $photo = Photo::find($id);
+        $album_id = $photo->album_id;
 
         if (Storage::path($photo->photo)) {
             // delete photo from storage
-            $photoDirectory = 'public/photos/'.$photo->album_id.'/';
+            $photoDirectory = 'public/photos/'.$album_id.'/';
             Storage::delete($photoDirectory.$photo->photo);
 
             // delete photo from DB
             $photo->delete();
 
-            return redirect()->route('albums.index')->with('success', 'Photo has been deleted');
+            return redirect()->route('albums.show', $album_id)->with('success', 'Photo has been deleted');
         }
 
     }

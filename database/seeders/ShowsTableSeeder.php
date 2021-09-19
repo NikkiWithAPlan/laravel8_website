@@ -13,7 +13,7 @@ class ShowsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('shows')->insert(
+        DB::table('shows')->insert([
             [
                 'title' => '2018 Szeptember 28 - Debrecen',
                 'date' => '2018-09-28',
@@ -54,6 +54,6 @@ class ShowsTableSeeder extends Seeder
                 'start_time' => null,
                 'additional_info' => null,
             ],
-        );
+        ]);
     }
 }
