@@ -19,11 +19,11 @@ use App\Http\Controllers\BackendControllers\PhotosController;
 use App\Http\Controllers\BackendControllers\VideosController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
-                ->middleware('auth')
+                ->middleware('guest')
                 ->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
-                ->middleware('auth');
+                ->middleware('guest');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
                 ->middleware('guest')
