@@ -42,7 +42,7 @@ class SponsorsTableSeeder extends Seeder
             [
                 'title' => 'Nemzetközi Árufuvarozó',
                 'url' => 'https://www.facebook.com/nyiriati',
-                'logo' => 'nyiriAttile_logo.jpg'
+                'logo' => 'nyiriAttila_logo.jpg'
             ],
             [
                 'title' => 'Bruti',

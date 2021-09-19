@@ -16,7 +16,7 @@
                             {!! $bandText->text !!}
                         </textarea>
                         <br>
-                        <input class="btn btn-primary" type="submit" name="submit" value="SUBMIT">
+                        <input class="btn btn-primary" type="submit" name="submit" value="Update">
                     </form>
                 </div>
             </div>

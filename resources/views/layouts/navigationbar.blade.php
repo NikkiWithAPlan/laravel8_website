@@ -36,16 +36,21 @@
                 <li><a class="nav-link" href="{{ route('contacts.index') }}">
                     {{ __('Contacts') }}
                 </a></li>
+                <li><a class="nav-link" href="{{ route('sponsors.index') }}">
+                    {{ __('Sponsors') }}
+                </a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <button class="btn btn-sm btn-outline-secondary" type="button">
                     <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"
                             >{{ __('Logout') }}
                     </a>
+                    </button>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
