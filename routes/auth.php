@@ -18,6 +18,7 @@ use App\Http\Controllers\BackendControllers\AlbumsController;
 use App\Http\Controllers\BackendControllers\PhotosController;
 use App\Http\Controllers\BackendControllers\VideosController;
 use App\Http\Controllers\BackendControllers\SponsorsController;
+use App\Http\Controllers\BackendControllers\SignaturesController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
@@ -105,4 +106,8 @@ Route::resource('videos', VideosController::class)
 
 // Sponsors Backend
 Route::resource('sponsors', SponsorsController::class)
+                ->middleware('auth');
+
+// Signatures Backend
+Route::resource('signatures', SignaturesController::class)
                 ->middleware('auth');

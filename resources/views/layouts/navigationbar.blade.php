@@ -39,6 +39,9 @@
                 <li><a class="nav-link" href="{{ route('sponsors.index') }}">
                     {{ __('Sponsors') }}
                 </a></li>
+                <li><a class="nav-link" href="{{ route('signatures.index') }}">
+                    {{ __('Signatures') }}
+                </a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
