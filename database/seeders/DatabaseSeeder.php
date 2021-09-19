@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SignaturesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(ContactsTableSeeder::class);
+        $this->call(VideosTableSeeder::class);
+        $this->call(SponsorsTableSeeder::class);
     }
 }
