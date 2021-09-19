@@ -29,16 +29,20 @@
                                         </a>
                                         <a href="{{ route('albums.show', $album->id) }}" type="button"
                                             class="btn btn-outline-primary">
+                                            Edit Photos in Album
+                                        </a>
+                                        <a href="{{ route('albums.edit', $album->id) }}" type="button"
+                                            class="btn btn-outline-primary">
                                             Edit album
                                         </a>
-                                        <form method="post" action="{{ route('albums.destroy', $album->id) }}">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button type="submit" class="btn btn-outline-danger">
-                                                Delete - {{ $album->name }}
-                                            </button>
-                                        </form>
                                     </div>
+                                    <form method="post" action="{{ route('albums.destroy', $album->id) }}">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-danger">
+                                            Delete - {{ $album->name }}
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

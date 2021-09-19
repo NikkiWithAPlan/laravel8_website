@@ -51,17 +51,8 @@ class AlbumsController extends Controller
      */
     public function store(Request $request)
     {
-		// Get filename with extension
-		$fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
-        
-		// Get just the filename
-		$fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-
-		// Get extension
-		$extension = $request->file('cover_image')->getClientOriginalExtension();
-
 		// Create new filename
-		$filenameToStore = $fileName.'_'.time().'.'.$extension;
+		$filenameToStore = AlbumsController::getFileNameToStore($request);
 
 		// Create album
 		$album = new Album;
@@ -87,6 +78,52 @@ class AlbumsController extends Controller
         $album = Album::with('Photos')->find($id);
 
 		return view('backend.albums.show')->with('album', $album);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $album = Album::with('Photos')->find($id);
+
+        return view('backend.albums.edit')->with('album', $album);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $album = Album::find($id);
+
+        // delete the album cover image from storage
+        if (Storage::path($album->cover_image)) {
+            $albumCoverDirectory = 'public/album_covers/'.$album->id;
+            Storage::delete(Storage::allFiles($albumCoverDirectory));
+        }
+
+        // save the new cover image and update DB
+        // Create new filename
+		$filenameToStore = AlbumsController::getFileNameToStore($request);
+
+		// Update album
+		$album->name = $request->input('name');
+		$album->cover_image = $filenameToStore;
+
+		$album->save();
+
+		// Upload file
+		$path = $request->file('cover_image')->storeAs('public/album_covers/'.$album->id, $filenameToStore);
+        
+        return redirect()->route('albums.index');
     }
 
     /**
@@ -119,5 +156,22 @@ class AlbumsController extends Controller
 
 			return redirect()->route('albums.index')->with('success', 'Album has been deleted');
 		}
+    }
+
+    private function getFileNameToStore(Request $request)
+    {
+        // Get filename with extension
+		$fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+        
+		// Get just the filename
+		$fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+		// Get extension
+		$extension = $request->file('cover_image')->getClientOriginalExtension();
+
+		// Create new filename
+		$filenameToStore = $fileName.'_'.time().'.'.$extension;
+
+        return $filenameToStore;
     }
 }
