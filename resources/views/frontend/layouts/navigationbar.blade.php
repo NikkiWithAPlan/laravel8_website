@@ -12,15 +12,19 @@
             @guest
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mx-auto">
-                    <li class="m-2"><a class="nav-link" href="{{ route('band.index') }}">
+                    <li class="m-2">
+                        <a class="nav-link" href="{{ route('bands') }}">
                             <h2>{{ __('BAND') }}</h2>
-                        </a></li>
+                        </a>
+                    </li>
                     <li class="m-2"><a class="nav-link" href="{{ route('albums.index') }}">
                             <h2>{{ __('PHOTOS') }}</h2>
                         </a></li>
-                    <li class="m-2"><a class="nav-link" href="{{ route('videos.index') }}">
+                    <li class="m-2">
+                        <a class="nav-link" href="{{ route('videosPage') }}">
                             <h2>{{ __('VIDEOS') }}</h2>
-                        </a></li>
+                        </a>
+                    </li>
                     <li class="m-2"><a class="nav-link" href="{{ route('shows.index') }}">
                             <h2>{{ __('SHOWS') }}</h2>
                         </a></li>
@@ -39,7 +43,7 @@
     </div>
 </nav>
 
-<style scoped>
+<style>
     @font-face {
         font-family: Squealer;
         src: url('storage/fonts/squealer.woff') format("woff");
@@ -52,9 +56,17 @@
     }
 
     /* Style the active class, and buttons on mouse-over */
-    h2.active-item, h2:hover {
+    h2.active-item,
+    h2:hover {
         font-weight: 900;
         text-shadow: 0 0 15px #f5db47;
     }
 
 </style>
+
+<script>
+    $('.navbar .navbar-nav a').on('click', function() {
+        $('.navbar .navbar-nav').find('li.active').removeClass('active');
+        $(this).parent('li').addClass('active');
+    });
+</script>

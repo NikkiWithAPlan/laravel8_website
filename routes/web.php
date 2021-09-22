@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FrontendControllers\BandsController;
+use App\Http\Controllers\FrontendControllers\VideosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,11 @@ use App\Http\Controllers\FrontendControllers\BandsController;
 |
 */
 
-Route::get('/', [BandsController::class, 'index']);
+Route::get('/', [BandsController::class, 'index'])->name('bands');
 
-Route::get('/band', [BandsController::class, 'index'])->name('band');
+Route::get('/videosPage', [VideosController::class, 'index'])->name('videosPage');
+
+// Route::get('/band', [BandsController::class, 'index'])->name('bandsBand');
 
 require __DIR__.'/auth.php';
 
