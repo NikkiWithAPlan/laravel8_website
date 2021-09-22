@@ -3,7 +3,7 @@ $body-bg: #f8fafc;
 
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
+$font-size-base: 1.1rem;
 $line-height-base: 1.6;
 
 // Colors
@@ -17,7 +17,14 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+$card-bg: #a7a7a7;
+$link-hover-color: #7c7c7c;
+$link-color: #585858;
 
 // Album and images
 $thumbnail-padding: .25rem;
 $thumbnail-border-width: .25rem;
+
+$theme-colors: (
+  primary: #414141
+);

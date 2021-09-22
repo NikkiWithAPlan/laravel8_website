@@ -1,30 +1,26 @@
-<div class="footer shadow-sm" style="background-color: #414141;">
+<footer class="footer shadow-sm" style="background-color: #414141;">
     <div class="mx-auto">
         <div class="d-flex p-2 justify-content-center">
 
-            <a id="footerA" href="https://www.facebook.com/ACDCtributedebrecen/" target="_blank">
+            <a id="footerA" class="icon-link" href="https://www.facebook.com/ACDCtributedebrecen/" target="_blank"
+                onmouseover="mouseover()" onmouseout="mouseout()" style="color: #9b9b9b;">
                 <i class="bi-facebook" style="font-size: 2rem;"></i>
             </a>
         </div>
         <div class="d-flex p-2 justify-content-center">
-            <h5 id="footerP">
+            <p id="footerP" style="color: #9b9b9b;">
                 &copy; DC/79 @php echo date("Y"); @endphp
-            </h5>
+            </p>
         </div>
     </div>
-</div>
+</footer>
 
-<style>
-    a {
-        color: #9b9b9b;
+<script>
+    function mouseover() {
+        document.getElementById("footerA").style.color = "#7c7c7c";
     }
 
-    a:hover {
-        color: #7c7c7c;
+    function mouseout() {
+        document.getElementById("footerA").style.color = "#9b9b9b";
     }
-
-    #footerP {
-        color: #9b9b9b;
-    }
-
-</style>
+</script>

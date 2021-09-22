@@ -12,7 +12,7 @@
             @guest
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mx-auto">
-                    <li class="m-2"><a class="nav-link" href="#">
+                    <li class="m-2"><a class="nav-link" href="{{ route('band.index') }}">
                             <h2>{{ __('BAND') }}</h2>
                         </a></li>
                     <li class="m-2"><a class="nav-link" href="{{ route('albums.index') }}">

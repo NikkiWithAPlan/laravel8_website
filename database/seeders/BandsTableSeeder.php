@@ -16,23 +16,23 @@ class BandsTableSeeder extends Seeder
         DB::table('bands')->insert([
             [
                 'member_name' => 'Szedlják János',
-                'instrument' => 'Ének ( Bon Scott )'
+                'instrument' => 'Ének (Bon Scott)'
             ],
             [
-                'member_name' => 'Szólógitárost keresünk',
-                'instrument' => 'Szólógitár ( Angus Young )'
+                'member_name' => 'Juhos Nándor',
+                'instrument' => 'Szólógitár (Angus Young)'
             ],
             [
                 'member_name' => 'Szűcs Attila',
-                'instrument' => 'Dobok ( Phill Rudd )'
+                'instrument' => 'Dobok ( Phill Rudd)'
             ],
             [
-                'member_name' => 'Basszusgitarost keresunk',
-                'instrument' => 'Basszusgitár ( Cliff Williams )'
+                'member_name' => 'Dolmán István',
+                'instrument' => 'Basszusgitár (Cliff Williams)'
             ],
             [
                 'member_name' => 'Szép Gábor',
-                'instrument' => 'Ritmusgitár ( Malcolm Young )'
+                'instrument' => 'Ritmusgitár (Malcolm Young)'
             ],
         ]);
     }
