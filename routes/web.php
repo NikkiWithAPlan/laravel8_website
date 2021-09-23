@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendControllers\BandsController;
 use App\Http\Controllers\FrontendControllers\VideosController;
 use App\Http\Controllers\FrontendControllers\ShowsController;
+use App\Http\Controllers\FrontendControllers\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Route::get('/', [BandsController::class, 'index'])->name('bands');
 Route::get('/videosPage', [VideosController::class, 'index'])->name('videosPage');
 
 Route::get('/showsPage', [ShowsController::class, 'index'])->name('showsPage');
+
+Route::get('/contactsPage', [ContactsController::class, 'index'])->name('contactsPage');
 
 // Route::get('/band', [BandsController::class, 'index'])->name('bandsBand');
 

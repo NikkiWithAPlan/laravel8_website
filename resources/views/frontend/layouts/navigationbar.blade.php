@@ -30,9 +30,11 @@
                             <h2>{{ __('SHOWS') }}</h2>
                         </a>
                     </li>
-                    <li class="m-2"><a class="nav-link" href="{{ route('contacts.index') }}">
+                    <li class="m-2">
+                        <a class="nav-link" href="{{ route('contactsPage') }}">
                             <h2>{{ __('CONTACT') }}</h2>
-                        </a></li>
+                        </a>
+                    </li>
                     <li class="m-2"><a class="nav-link" href="{{ route('sponsors.index') }}">
                             <h2>{{ __('SPONSORS') }}</h2>
                         </a></li>

@@ -1,4 +1,4 @@
-<footer class="footer" style="background-color: #414141;">
+<footer class="w-100 py-1" style="background-color: #414141;">
     <div class="mx-auto">
         <div class="d-flex p-1 justify-content-center">
 

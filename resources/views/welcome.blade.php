@@ -24,7 +24,7 @@
 
     @include('frontend.layouts.navigationbar')
 
-    <div class="container-fluid" style="min-height: 50%;">
+    <div class="container-fluid" style="min-height: 50%; padding-bottom: 5rem;">
         <main class="py-4">
             @yield('content')
         </main>
