@@ -15,9 +15,29 @@ class ShowsTableSeeder extends Seeder
     {
         DB::table('shows')->insert([
             [
-                'title' => '2018 Szeptember 28 - Debrecen',
-                'date' => '2018-09-28',
+                'title' => '2021 Szeptember 28 - Debrecen',
+                'date' => '2021-09-28',
                 'address' => 'Debrecen - Csapó u. 27',
+                'place_name' => 'RONCSBÁR',
+                'link' => null,
+                'ticket' => 'somewhere',
+                'start_time' => null,
+                'additional_info' => null,
+            ],
+            [
+                'title' => '2022 Oktober 28 - Debrecen',
+                'date' => '2022-10-28',
+                'address' => 'Debrecen - Noway u. 27',
+                'place_name' => 'RONCSBÁR',
+                'link' => 'https://google.com',
+                'ticket' => null,
+                'start_time' => null,
+                'additional_info' => 'info',
+            ],
+            [
+                'title' => '2021 December 24 - Debrecen',
+                'date' => '2021-12-24',
+                'address' => 'Debrecen - Something u. 27',
                 'place_name' => 'RONCSBÁR',
                 'link' => null,
                 'ticket' => null,

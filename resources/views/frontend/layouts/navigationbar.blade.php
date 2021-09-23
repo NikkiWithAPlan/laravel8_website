@@ -25,9 +25,11 @@
                             <h2>{{ __('VIDEOS') }}</h2>
                         </a>
                     </li>
-                    <li class="m-2"><a class="nav-link" href="{{ route('shows.index') }}">
+                    <li class="m-2">
+                        <a class="nav-link" href="{{ route('showsPage') }}">
                             <h2>{{ __('SHOWS') }}</h2>
-                        </a></li>
+                        </a>
+                    </li>
                     <li class="m-2"><a class="nav-link" href="{{ route('contacts.index') }}">
                             <h2>{{ __('CONTACT') }}</h2>
                         </a></li>
@@ -64,9 +66,9 @@
 
 </style>
 
-<script>
+{{-- <script>
     $('.navbar .navbar-nav a').on('click', function() {
         $('.navbar .navbar-nav').find('li.active').removeClass('active');
         $(this).parent('li').addClass('active');
     });
-</script>
+</script> --}}

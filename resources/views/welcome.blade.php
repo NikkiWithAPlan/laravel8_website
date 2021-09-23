@@ -21,18 +21,17 @@
 </head>
 
 <body style="background-color: #585858;">
-    <div class="container">
 
-        @include('frontend.layouts.navigationbar')
+    @include('frontend.layouts.navigationbar')
 
-        <div class="container-fluid" style="min-height: 50%;">
-            <main class="py-4">
-                @yield('content')
-            </main>
-        </div>
-
-        @include('frontend.layouts.footer')
+    <div class="container-fluid" style="min-height: 50%;">
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
+
+    @include('frontend.layouts.footer')
+
 </body>
 
 </html>
