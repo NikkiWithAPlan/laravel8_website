@@ -7,6 +7,7 @@ use App\Http\Controllers\FrontendControllers\VideosController;
 use App\Http\Controllers\FrontendControllers\ShowsController;
 use App\Http\Controllers\FrontendControllers\ContactsController;
 use App\Http\Controllers\FrontendControllers\SponsorsController;
+use App\Http\Controllers\FrontendControllers\AlbumsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::get('/showsPage', [ShowsController::class, 'index'])->name('showsPage');
 Route::get('/contactsPage', [ContactsController::class, 'index'])->name('contactsPage');
 
 Route::get('/sponsorsPage', [SponsorsController::class, 'index'])->name('sponsorsPage');
+
+Route::get('/albumsPage', [AlbumsController::class, 'index'])->name('albumsPage');
+Route::get('/albumPage/{id}', [AlbumsController::class, 'getAlbum'])->name('albumsPage.getAlbum');
 
 // Route::get('/band', [BandsController::class, 'index'])->name('bandsBand');
 

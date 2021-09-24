@@ -17,9 +17,11 @@
                             <h2>{{ __('BAND') }}</h2>
                         </a>
                     </li>
-                    <li class="m-2"><a class="nav-link" href="{{ route('albums.index') }}">
+                    <li class="m-2">
+                        <a class="nav-link" href="{{ route('albumsPage') }}">
                             <h2>{{ __('PHOTOS') }}</h2>
-                        </a></li>
+                        </a>
+                    </li>
                     <li class="m-2">
                         <a class="nav-link" href="{{ route('videosPage') }}">
                             <h2>{{ __('VIDEOS') }}</h2>
@@ -51,7 +53,7 @@
 <style>
     @font-face {
         font-family: Squealer;
-        src: url('storage/fonts/squealer.woff') format("woff");
+        src: url('../../../storage/fonts/squealer.woff') format("woff");
     }
 
     h2 {

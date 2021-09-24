@@ -4,13 +4,13 @@
     <div class="container">
         <div class="row justify-content-center">
 
-            <div class="card card-bg shadow-sm col-md-8 py-4 " style="margin:1rem;">
+            <div class="card card-bg shadow-sm col-md-8 py-4" style="margin:1rem;">
                 <div class="card-body">
                     <div class="container">
                         <div class="row justify-content-center">
                             @foreach ($sponsors as $sponsor)
                                 <div class="col-4 py-4">
-                                    <a  class="d-flex justify-content-center" href="{{ $sponsor->url }}" target="_blank">
+                                    <a class="d-flex justify-content-center" href="{{ $sponsor->url }}" target="_blank">
                                         <img class="img" src="/storage/sponsor_logo/{{ $sponsor->logo }}"
                                             alt="{{ $sponsor->title }}" height="75">
                                     </a>
