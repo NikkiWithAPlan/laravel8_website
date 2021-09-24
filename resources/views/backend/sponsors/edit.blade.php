@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-sm-10">
-            <div class="card">
+            <div class="card bg-transparent">
                 <div class="card-body">
 
                     <div class="container">

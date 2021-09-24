@@ -6,7 +6,7 @@
 
     <hr>
 
-    <div class="card">
+    <div class="card bg-transparent">
         <div class="row no-gutters">
             <div class="col-sm-7">
                 <div class="card-body">

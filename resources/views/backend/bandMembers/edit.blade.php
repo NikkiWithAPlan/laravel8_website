@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-sm-6">
-        <div class="card">
+        <div class="card bg-transparent">
             <div class="card-body">
                 <form method="POST" action="{{ route('band.update', $bandMember->id) }}">
                     @method('PUT')

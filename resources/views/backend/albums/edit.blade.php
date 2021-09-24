@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-sm-10">
-            <div class="card">
+            <div class="card bg-transparent">
                 <div class="card-body">
                     <form method="POST" action="{{ route('albums.update', $album->id) }}" enctype="multipart/form-data">
                         @method('PUT')

@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>{{ $sponsor->title }}</h1>
-    <div class="card">
+    <div class="card bg-transparent">
         <div class="card-body">
 
             <div class="container">

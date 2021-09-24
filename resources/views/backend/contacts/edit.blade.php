@@ -10,7 +10,7 @@
                 @method('PUT')
                 @csrf
                 <div class="col-4">
-                    <div class="card">
+                    <div class="card bg-transparent">
                         <div class="card-body">
                             <label for="title" class="form-label">Title</label>
                             <input type="text" name="title" id="title" class="form-control"

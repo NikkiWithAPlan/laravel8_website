@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>{{ $album->name }}</h1>
-    <div class="card">
+    <div class="card bg-transparent">
         <div class="card-body">
 
             <div class="container">
@@ -35,7 +35,7 @@
                 <div class="row justify-content-start">
                     @forelse ($album->photos as $photo)
                         <div class="col-4">
-                            <div class="card" style="width: 18rem;">
+                            <div class="card bg-transparent" style="width: 18rem;">
                                 <a href="{{ route('photos.show', $photo->id) }}">
                                     <img class="card-img-top"
                                         src="/storage/photos/{{ $photo->album_id }}/{{ $photo->photo }}"

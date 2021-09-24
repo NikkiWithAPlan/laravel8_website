@@ -3,7 +3,7 @@
 @section('content')
 
     <h3>{{ $video->title }}</h3>
-    <div class="card">
+    <div class="card bg-transparent">
         <div class="card-body">
             <a class="btn btn-primary" role="button" href="{{ route('videos.create') }}">
                 Add new video

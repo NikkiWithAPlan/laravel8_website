@@ -2,13 +2,13 @@
 
 @section('content')
 
-    <div class="card" style="margin:1rem; padding:0.5rem;">
+    <div class="card bg-transparent" style="margin:1rem; padding:0.5rem;">
         <h2 class="card-title">Guestbook</h2>
         <div class="card-body">
             <div class="container">
                 @forelse ($signatures as $signature)
                     <div class="row justify-content-start">
-                        <div class="card" style="margin:1rem; padding:0.5rem;">
+                        <div class="card bg-transparent" style="margin:1rem; padding:0.5rem;">
                             <div class="card-body">
                                 <h4>{{ $signature->name }}</h4>
                                 <br>

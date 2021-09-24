@@ -2,7 +2,7 @@
 
 @section('content')
     <h2>Albums</h2>
-    <div class="card">
+    <div class="card bg-transparent">
         <div class="card-body">
             <a class="btn btn-primary" role="button" href="{{ route('albums.create') }}">
                 Add new album
@@ -14,7 +14,7 @@
                 <div class="row justify-content-start">
                     @forelse ($albums as $album)
                         <div class="col-4">
-                            <div class="card" style="width: 18rem;">
+                            <div class="card bg-transparent" style="width: 18rem;">
                                 <a href="{{ route('albums.show', $album->id) }}">
                                     <img class="card-img-top"
                                         src="/storage/album_covers/{{ $album->id }}/{{ $album->cover_image }}"

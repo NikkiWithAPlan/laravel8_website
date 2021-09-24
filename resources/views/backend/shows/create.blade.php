@@ -8,7 +8,7 @@
 		@csrf
     <div class="row">
             <div class="col-sm-6">
-                <div class="card">
+                <div class="card bg-transparent">
                     <div class="card-body">
 
                         <label for="title" class="form-label">Title of the Show - required</label>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="card">
+                <div class="card bg-transparent">
                     <div class="card-body">
                         <label for="link" class="form-label">Link for the location's website</label>
                         <input type="text" name="link" id="link" class="form-control"

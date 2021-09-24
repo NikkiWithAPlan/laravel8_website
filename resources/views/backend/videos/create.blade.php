@@ -6,7 +6,7 @@
 
 	<div class="row">
 		<div class="col-sm-6">
-			<div class="card">
+			<div class="card bg-transparent">
 				<div class="card-body">
 					<form method="post" action="{{ route('videos.store') }}">
 						@csrf
@@ -26,7 +26,7 @@
 
 		{{-- Instructions how to find the embed video link --}}
 		<div class="col-sm-6">
-			<div class="card">
+			<div class="card bg-transparent">
 				<div class="card-body">
 					<h3 class="card-title">How to find the video Link on YouTube</h3>
 					<ol class="list-group list-group-numbered">

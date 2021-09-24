@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="card">
+    <div class="card bg-transparent">
 
         <div class="card-body">
 
@@ -15,7 +15,7 @@
                 <div class="row justify-content-start">
                     @forelse ($shows as $show)
                         <div class="col-4">
-                            <div class="card" style="width: 18rem; margin:1rem; padding:0.5rem;">
+                            <div class="card bg-transparent" style="width: 18rem; margin:1rem; padding:0.5rem;">
                                 <div class="card-title">
                                     <a href="{{ route('shows.show', $show->id) }}">
                                         {{ $show->date }}

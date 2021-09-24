@@ -2,7 +2,7 @@
 
 @section('content')
     <h2>Sponsors</h2>
-    <div class="card">
+    <div class="card bg-transparent">
         <div class="card-body">
             <a class="btn btn-primary" role="button" href="{{ route('sponsors.create') }}">
                 Add new sponsor
@@ -14,7 +14,7 @@
                 <div class="row justify-content-start">
                     @forelse ($sponsors as $sponsor)
                         <div class="col-4">
-                            <div class="card" style="width: 18rem;">
+                            <div class="card bg-transparent" style="width: 18rem;">
                                 <a href="{{ route('sponsors.show', $sponsor->id) }}">
                                     <img class="card-img-top"
                                         src="/storage/sponsor_logo/{{ $sponsor->logo }}"
