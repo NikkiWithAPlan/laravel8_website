@@ -35,7 +35,7 @@ Route::get('/albumsPage', [AlbumsController::class, 'index'])->name('albumsPage'
 Route::get('/albumPage/{id}', [AlbumsController::class, 'getAlbum'])->name('albumsPage.getAlbum');
 
 Route::get('/guestBookPage', [SignaturesController::class, 'index'])->name('signaturesPage');
-Route::post('/guestBook', [SignaturesController::class, 'store'])->name('sign');
+Route::post('validate-g-recaptcha', [SignaturesController::class, 'validateGCaptch']);
 
 // Route::get('/band', [BandsController::class, 'index'])->name('bandsBand');
 

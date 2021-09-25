@@ -6,6 +6,7 @@ use App\Models\Signature;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class SignaturesController extends Controller
 {
@@ -39,11 +40,6 @@ class SignaturesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-			'name' => 'required|min:3|max:50',
-			'body' => 'required|min:3',
-        ]);
-        
         // create new Signature
         $sign = new Signature;
 
@@ -54,4 +50,22 @@ class SignaturesController extends Controller
 
         return redirect()->route('signaturesPage')->with('success','Post created successfully!');
     }
+
+    public function validateGCaptch(Request $request) {
+
+        $input = $request->all();
+
+        $validator = Validator::make($input,[
+            'name' => 'required|min:3|max:50',
+            'body' => 'required|min:3',
+            'g-recaptcha-response' => 'required',
+        ]);
+
+        if ($validator->passes()){
+            SignaturesController::store($request);
+        }
+
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+
 }
