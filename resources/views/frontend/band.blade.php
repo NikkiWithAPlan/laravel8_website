@@ -19,9 +19,18 @@
                             <tbody>
                                 @foreach ($members as $member)
                                     <tr class="d-flex justify-content-center">
-                                        <th class="col-sm-12 d-flex justify-content-center d-flex align-items-center">
-                                            {{ $member->member_name }} <i class="bi bi-lightning" style="font-size: 1.5rem;"></i>
-                                            {{ $member->instrument }}
+                                        <th class="col-md-5 d-flex justify-content-end align-items-center">
+                                            <p class="text-end text-wrap">
+                                                {{ $member->member_name }}
+                                            </p>
+                                        </th>
+                                        <th class="col-md-1 d-flex justify-content-center">
+                                            <i class="bi bi-lightning" style="font-size: 1.5rem;"></i>
+                                        </th>
+                                        <th class="col-md-6 d-flex justify-content-start align-items-center">
+                                            <p class="text-start text-wrap">
+                                                {{ $member->instrument }}
+                                            </p>
                                         </th>
                                     </tr>
                                 @endforeach
