@@ -37,13 +37,16 @@
                             <h2>{{ __('CONTACT') }}</h2>
                         </a>
                     </li>
-                    <li class="m-2"><a class="nav-link" href="{{ route('sponsorsPage') }}">
+                    <li class="m-2">
+                        <a class="nav-link" href="{{ route('sponsorsPage') }}">
                             <h2>{{ __('SPONSORS') }}</h2>
                         </a>
                     </li>
-                    <li class="m-2"><a class="nav-link" href="{{ route('signatures.index') }}">
+                    <li class="m-2">
+                        <a class="nav-link" href="{{ route('signaturesPage') }}">
                             <h2>{{ __('GUEST BOOK') }}</h2>
-                        </a></li>
+                        </a>
+                    </li>
                 </ul>
             @endguest
         </div>

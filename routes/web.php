@@ -8,6 +8,7 @@ use App\Http\Controllers\FrontendControllers\ShowsController;
 use App\Http\Controllers\FrontendControllers\ContactsController;
 use App\Http\Controllers\FrontendControllers\SponsorsController;
 use App\Http\Controllers\FrontendControllers\AlbumsController;
+use App\Http\Controllers\FrontendControllers\SignaturesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::get('/sponsorsPage', [SponsorsController::class, 'index'])->name('sponsor
 
 Route::get('/albumsPage', [AlbumsController::class, 'index'])->name('albumsPage');
 Route::get('/albumPage/{id}', [AlbumsController::class, 'getAlbum'])->name('albumsPage.getAlbum');
+
+Route::get('/guestBookPage', [SignaturesController::class, 'index'])->name('signaturesPage');
 
 // Route::get('/band', [BandsController::class, 'index'])->name('bandsBand');
 
