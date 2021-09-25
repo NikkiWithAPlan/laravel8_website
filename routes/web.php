@@ -37,10 +37,7 @@ Route::get('/albumPage/{id}', [AlbumsController::class, 'getAlbum'])->name('albu
 Route::get('/guestBookPage', [SignaturesController::class, 'index'])->name('signaturesPage');
 Route::post('validate-g-recaptcha', [SignaturesController::class, 'validateGCaptch']);
 
-// Route::get('/band', [BandsController::class, 'index'])->name('bandsBand');
-
 require __DIR__.'/auth.php';
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
