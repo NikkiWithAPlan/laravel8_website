@@ -17,7 +17,7 @@
                                             alt="{{ $album->name }}" width="250">
                                     </a>
                                     <i class="bi bi-lightning d-flex justify-content-center mt-2" style="font-size: 1.5rem;"></i>
-                                    <h5 class="text-center text-wrap mt-1">{{ $album->name }}</h5>
+                                    <h2 class="text-primary text-center text-wrap mt-2">{{ Str::upper($album->name) }}</h2>
                                 </div>
                             @empty
                                 <p>No albums to display</p>

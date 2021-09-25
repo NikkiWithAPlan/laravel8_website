@@ -7,7 +7,7 @@
             <div class="card card-bg shadow-sm col-md-9 py-4" style="margin:2h2rem;">
                 <div class="card-body">
                     <div class="container">
-                        <h2 class="text-primary">{{ $album->name }}</h2>
+                        <h2 class="text-primary">{{ Str::upper($album->name) }}</h2>
                         <a href="{{ route('albumsPage') }}">Go back</a>
                         <hr>
                         <div class="row justify-content-center">
