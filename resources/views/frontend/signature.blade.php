@@ -14,6 +14,19 @@
                         @include('frontend.signs.addNewSign')
                     </div>
                 </div>
+                @if (session('success'))
+                <div class="row justify-content-center">
+                    <div class="col-md-10 pt-4">
+                        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+                            <i class="bi bi-patch-check"></i>
+                            <div class="ms-2">
+                                <strong>Success! </strong> Your message has been saved successfully.
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+                @endif
                 <div class="card-body">
                     <div class="container">
                         @include('frontend.signs.signsList')

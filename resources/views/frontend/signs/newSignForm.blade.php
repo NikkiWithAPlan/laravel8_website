@@ -1,15 +1,15 @@
-<form action="">
+<form method="POST" action="{{ route('sign') }}">
     @csrf
     <div class="modal-body px-5">
         <div class="form-floating">
-            <input type="text" class="form-control" id="username" placeholder="Your name"
-                style="background-color:#cccccc; border: 0;">
-            <label for="username">Username</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your name"
+                style="background-color:#cccccc; border: 0;" required>
+            <label for="name">Username</label>
         </div>
         <div class="form-floating mt-3">
-            <textarea class="form-control" placeholder="Please enter your message here..." id="message"
-                style="height: 150px; background-color:#cccccc; border: 0;"></textarea>
-            <label for="message">Please enter your message here...</label>
+            <textarea class="form-control" placeholder="Please enter your message here..." id="body" name="body"
+                style="height: 150px; background-color:#cccccc; border: 0;" required></textarea>
+            <label for="body">Please enter your message here...</label>
         </div>
     </div>
     <div class="modal-footer justify-content-center mb-2">

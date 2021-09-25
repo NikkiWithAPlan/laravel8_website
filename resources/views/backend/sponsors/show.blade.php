@@ -17,7 +17,7 @@
 
         <div class="card-body">
             <div class="col-4">
-                <div class="card" style="width: 18rem;">
+                <div class="card bg-transparent" style="width: 18rem;">
                     <div class="card-body">
 
                         <img class="card-img-top" src="/storage/sponsor_logo/{{ $sponsor->logo }}"

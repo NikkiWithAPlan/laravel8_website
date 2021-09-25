@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button type="button" class="btn btn-primary rounded-circle" data-bs-toggle="tooltip" data-bs-placement="left"
+    <button type="button" class="btn btn-lg btn-primary rounded-circle" data-bs-toggle="tooltip" data-bs-placement="left"
         title="Add new - Új üzenet">
         <span data-bs-toggle="modal" data-bs-target="#signatureModal">
             <i class="bi bi-plus-lg"></i>

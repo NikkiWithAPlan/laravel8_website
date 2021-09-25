@@ -1,4 +1,4 @@
-<ul class="list-group list-group-flush mt-3">
+<ul class="list-group list-group-flush mt-1">
     @foreach ($signatures as $signature)
         <li class="list-group-item p-4" style="background:#cacaca;">
             <div class="row justify-content-center">
