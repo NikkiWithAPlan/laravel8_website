@@ -20,7 +20,7 @@
                         <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
                             <i class="bi bi-patch-check"></i>
                             <div class="ms-2">
-                                <strong>Success! </strong> Your message has been saved successfully.
+                                <strong>Success! </strong> Your message has been successfully saved.
                             </div>
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
