@@ -137,7 +137,7 @@ class ShowsController extends Controller
         if (empty($request->input('start_time'))) {
             $show->start_time = null;
         } else {
-            $show->start_time = date("h:i:s", strtotime($request->input('start_time')));
+            $show->start_time = date("H:i", strtotime($request->input('start_time')));
         }
         
         $show->additional_info = $request->input('additional_info');
