@@ -97,4 +97,4 @@ To access the CMS application of this project, you need register on `http://loca
 
 ## License
 
-This mini CMS website project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This mini CMS website project is open-sourced software licensed under the [GNU GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html).
